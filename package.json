@@ -1,0 +1,9 @@
+{
+  "name": "javascript-ninja",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/YMagrelo/secrets-of-the-javascripts-ninja.git",
+  "author": " Yaroslav Magrelo",
+  "license": "MIT",
+  "type": "module"
+}
