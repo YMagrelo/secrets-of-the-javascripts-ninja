@@ -1,19 +1,44 @@
-function skulk(name) {}
-function Ninja(name) {}
+// function skulk(name) {}
+// function Ninja(name) {}
+//
+// // like call of function
+// skulk('Hattori');
+// (function (who) {return who}) ('Hattori');
+//
+// let ninja = {
+//     skulk: function () {}
+// }
+//
+// // like call method of object
+// ninja.skulk('Hattori');
+//
+// ninja = new Ninja('Hattori'); // constructor call
+//
+// skulk.call(ninja, 'Hattori'); // through call method
+//
+// skulk.apply(ninja, ['Hattori'])
 
-// like call of function
-skulk('Hattori');
-(function (who) {return who}) ('Hattori');
 
-let ninja = {
-    skulk: function () {}
+// function ninja() {
+//   return console.log(this);
+// }
+//
+// function samurai() {
+//   "use strict";
+//     return console.log('use strict', this)
+// }
+//
+// ninja();
+// samurai();
+
+function whatsMyContext() {
+    return this;
 }
 
-// like call method of object
-ninja.skulk('Hattori');
+let getMyThis = whatsMyContext;
 
-ninja = new Ninja('Hattori'); // constructor call
+let ninja1 = {
+    getMyThis: getMyThis
+}
 
-skulk.call(ninja, 'Hattori'); // through call method
-
-skulk.apply(ninja, ['Hattori'])
+console.log(ninja1.getMyThis());

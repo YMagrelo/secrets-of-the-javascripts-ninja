@@ -8,20 +8,40 @@
     </style>
 </head>
 <body>
-<ul id="first"></ul>
+<button id="test">Click Me!</button>
 
 <script>
-    function addMessage(element, message){
-        var messageElement = document.createElement("li");
-        messageElement.textContent = message;
-        element.appendChild(messageElement);
+
+    function Button() {
+        this.clicked = false;
+        this.click = function () {
+                this.clicked = true
+            console.log(button.clicked)
+        }
     }
 
-    var first = document.getElementById("first");
-    addMessage(first, "Page loading");
+    var button = new Button();
+    var elem = document.getElementById('test');
+
+    elem.addEventListener('click', button.click.bind(button));
 </script>
 
-<ul id="second"></ul>
+
+
+<!--<ul id="first"></ul>-->
+
+<!--<script>-->
+<!--    function addMessage(element, message){-->
+<!--        var messageElement = document.createElement("li");-->
+<!--        messageElement.textContent = message;-->
+<!--        element.appendChild(messageElement);-->
+<!--    }-->
+
+<!--    var first = document.getElementById("first");-->
+<!--    addMessage(first, "Page loading");-->
+<!--</script>-->
+
+<!--<ul id="second"></ul>-->
 
 <!--<script>-->
 <!--    document.body.addEventListener("mousemove", function() {-->
