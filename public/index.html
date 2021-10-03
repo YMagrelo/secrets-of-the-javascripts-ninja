@@ -8,22 +8,49 @@
     </style>
 </head>
 <body>
-<button id="test">Click Me!</button>
+
+<div id="box1" style="background-color: aquamarine; border: 1px solid red; width: 60px; position: relative">FirstBox</div>
 
 <script>
+    function animateIt(elementId) {
+        let elem = document.getElementById(elementId);
+        let tick = 0;
 
-    const button =  {
-        clicked: false,
-        click: () => {
-                this.clicked = true
-            console.log(button.clicked)
-        }
+        const timer = setInterval(function () {
+            if (tick < 100) {
+                elem.style.left = elem.style.top = tick + 'px'
+                tick++;
+            } else {
+                clearInterval(timer);
+                console.log('tick === 100', tick);
+                console.log('elem', elem);
+                console.log('timer', timer);
+            }
+        }, 50)
+
     }
 
-    var elem = document.getElementById('test');
-
-    elem.addEventListener('click', button.click);
+    animateIt('box1')
 </script>
+
+
+
+<!--<button id="test">Click Me!</button>-->
+
+<!--<script>-->
+
+<!--    const button =  {-->
+<!--        clicked: false,-->
+<!--        click: () => {-->
+<!--                this.clicked = true-->
+<!--            console.log(button.clicked)-->
+<!--        }-->
+<!--    }-->
+
+<!--    var elem = document.getElementById('test');-->
+
+<!--    elem.addEventListener('click', button.click);-->
+<!--</script>-->
 
 
 
